@@ -1,0 +1,324 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles personnalisés pour la responsivité */
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Améliorations pour les petits écrans */
+@media (max-width: 640px) {
+  .mobile-padding {
+    @apply px-4 py-3;
+  }
+
+  .mobile-text {
+    @apply text-sm;
+  }
+
+  .mobile-grid {
+    @apply grid-cols-1 gap-4;
+  }
+}
+
+/* Améliorations pour les écrans moyens */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .tablet-grid {
+    @apply grid-cols-2 gap-6;
+  }
+}
+
+/* Améliorations pour les grands écrans */
+@media (min-width: 1025px) {
+  .desktop-grid {
+    @apply grid-cols-4 gap-6;
+  }
+}
+
+/* Animations personnalisées */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Améliorations pour les cartes */
+.card-hover {
+  @apply transition-all duration-300 ease-out;
+}
+
+.card-hover:hover {
+  @apply transform -translate-y-1 shadow-xl;
+}
+
+/* Améliorations pour les graphiques */
+.chart-container {
+  @apply w-full h-full min-h-[200px] sm:min-h-[250px];
+}
+
+/* Améliorations pour la navigation mobile */
+@media (max-width: 1024px) {
+  .mobile-nav {
+    @apply fixed inset-0 z-50 bg-white;
+  }
+}
+
+/* Améliorations pour les tableaux */
+@media (max-width: 768px) {
+  .table-responsive {
+    @apply overflow-x-auto;
+  }
+
+  .table-responsive table {
+    @apply min-w-full;
+  }
+}
+
+/* Améliorations pour les formulaires */
+.form-input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200;
+}
+
+.form-input:focus {
+  @apply shadow-lg;
+}
+
+/* Améliorations pour les boutons */
+.btn-primary {
+  @apply bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-xl font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 hover:shadow-lg hover:scale-105;
+}
+
+.btn-secondary {
+  @apply bg-white text-gray-700 px-6 py-3 rounded-xl font-medium border border-gray-300 hover:bg-gray-50 transition-all duration-300 hover:shadow-md;
+}
+
+/* Améliorations pour les badges */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-success {
+  @apply bg-green-100 text-green-800;
+}
+
+.badge-warning {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.badge-error {
+  @apply bg-red-100 text-red-800;
+}
+
+.badge-info {
+  @apply bg-blue-100 text-blue-800;
+}
+
+/* Améliorations pour les avatars */
+.avatar {
+  @apply rounded-full flex items-center justify-center text-white font-semibold;
+}
+
+.avatar-sm {
+  @apply w-8 h-8 text-xs;
+}
+
+.avatar-md {
+  @apply w-10 h-10 text-sm;
+}
+
+.avatar-lg {
+  @apply w-12 h-12 text-base;
+}
+
+/* Améliorations pour les icônes */
+.icon-sm {
+  @apply w-4 h-4;
+}
+
+.icon-md {
+  @apply w-5 h-5;
+}
+
+.icon-lg {
+  @apply w-6 h-6;
+}
+
+/* Améliorations pour les espacements */
+.space-y-responsive>*+* {
+  @apply mt-4 sm:mt-6;
+}
+
+.space-x-responsive>*+* {
+  @apply ml-4 sm:ml-6;
+}
+
+/* Améliorations pour les grilles */
+.grid-responsive {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6;
+}
+
+/* Améliorations pour les textes */
+.text-responsive {
+  @apply text-sm sm:text-base;
+}
+
+.text-responsive-lg {
+  @apply text-lg sm:text-xl lg:text-2xl;
+}
+
+.text-responsive-xl {
+  @apply text-xl sm:text-2xl lg:text-3xl xl:text-4xl;
+}
+
+/* Améliorations pour les paddings */
+.p-responsive {
+  @apply p-4 sm:p-6;
+}
+
+.px-responsive {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+.py-responsive {
+  @apply py-4 sm:py-6 lg:py-8;
+}
+
+/* Améliorations pour les marges */
+.m-responsive {
+  @apply m-4 sm:m-6;
+}
+
+.mx-responsive {
+  @apply mx-4 sm:mx-6 lg:mx-8;
+}
+
+.my-responsive {
+  @apply my-4 sm:my-6 lg:my-8;
+}
+
+/* Améliorations pour les largeurs */
+.w-responsive {
+  @apply w-full sm:w-auto;
+}
+
+.max-w-responsive {
+  @apply max-w-full sm:max-w-sm lg:max-w-md xl:max-w-lg;
+}
+
+/* Améliorations pour les hauteurs */
+.h-responsive {
+  @apply h-auto sm:h-64 lg:h-80;
+}
+
+.min-h-responsive {
+  @apply min-h-screen;
+}
+
+/* Améliorations pour les flexbox */
+.flex-responsive {
+  @apply flex flex-col sm:flex-row;
+}
+
+.items-responsive {
+  @apply items-start sm:items-center;
+}
+
+.justify-responsive {
+  @apply justify-start sm:justify-between;
+}
+
+/* Améliorations pour les ombres */
+.shadow-responsive {
+  @apply shadow-sm sm:shadow-md lg:shadow-lg;
+}
+
+/* Améliorations pour les bordures */
+.border-responsive {
+  @apply border border-gray-200;
+}
+
+.rounded-responsive {
+  @apply rounded-lg sm:rounded-xl;
+}
+
+/* Améliorations pour les couleurs de fond */
+.bg-responsive {
+  @apply bg-white;
+}
+
+.bg-gradient-responsive {
+  @apply bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/30;
+}
+
+/* Améliorations pour les transitions */
+.transition-responsive {
+  @apply transition-all duration-300 ease-out;
+}
+
+/* Améliorations pour les états de focus */
+.focus-responsive {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+}
+
+/* Améliorations pour les états de hover */
+.hover-responsive {
+  @apply hover:shadow-lg hover:scale-105;
+}
+
+/* Améliorations pour les états actifs */
+.active-responsive {
+  @apply active:scale-95;
+}
+
+/* Améliorations pour les états désactivés */
+.disabled-responsive {
+  @apply disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Améliorations pour les états de chargement */
+.loading-responsive {
+  @apply animate-pulse;
+}
+
+/* Améliorations pour les états d'erreur */
+.error-responsive {
+  @apply border-red-300 text-red-600;
+}
+
+/* Améliorations pour les états de succès */
+.success-responsive {
+  @apply border-green-300 text-green-600;
+}
+
+/* Améliorations pour les états d'avertissement */
+.warning-responsive {
+  @apply border-yellow-300 text-yellow-600;
+}
+
+/* Améliorations pour les états d'information */
+.info-responsive {
+  @apply border-blue-300 text-blue-600;
+}

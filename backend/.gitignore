@@ -1,0 +1,44 @@
+# Dépendances
+node_modules/
+package-lock.json
+
+# Fichiers uploadés (ne pas commiter les documents médicaux)
+uploads/
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.doc
+*.docx
+*.xls
+*.xlsx
+
+# Variables d'environnement
+.env
+.env.local
+.env.production
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Fichiers temporaires
+*.tmp
+*.temp
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Tests
+coverage/
+.nyc_output/
+
+# Build
+dist/
+build/
+

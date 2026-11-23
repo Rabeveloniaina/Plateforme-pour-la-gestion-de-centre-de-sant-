@@ -1,0 +1,299 @@
+{
+  "database": {
+    "status": "success",
+    "details": []
+  },
+  "api": {
+    "status": "success",
+    "endpoints": {
+      "/auth/login": {
+        "status": "failed",
+        "error": "Données invalides"
+      },
+      "/patients": {
+        "status": "auth_required",
+        "method": "GET",
+        "statusCode": 401,
+        "error": "Non autorisé"
+      },
+      "/medecins": {
+        "status": "auth_required",
+        "method": "GET",
+        "statusCode": 401,
+        "error": "Non autorisé"
+      },
+      "/centres": {
+        "status": "auth_required",
+        "method": "GET",
+        "statusCode": 401,
+        "error": "Non autorisé"
+      },
+      "/rendez-vous": {
+        "status": "auth_required",
+        "method": "GET",
+        "statusCode": 401,
+        "error": "Non autorisé"
+      },
+      "/fiches-medicales": {
+        "status": "auth_required",
+        "method": "GET",
+        "statusCode": 401,
+        "error": "Non autorisé"
+      },
+      "/prescriptions": {
+        "status": "auth_required",
+        "method": "GET",
+        "statusCode": 401,
+        "error": "Non autorisé"
+      },
+      "/vaccinations": {
+        "status": "auth_required",
+        "method": "GET",
+        "statusCode": 401,
+        "error": "Non autorisé"
+      },
+      "/medicaments": {
+        "status": "auth_required",
+        "method": "GET",
+        "statusCode": 401,
+        "error": "Non autorisé"
+      },
+      "/statistiques/centre": {
+        "status": "auth_required",
+        "method": "GET",
+        "statusCode": 401,
+        "error": "Non autorisé"
+      },
+      "/notifications": {
+        "status": "auth_required",
+        "method": "GET",
+        "statusCode": 401,
+        "error": "Non autorisé"
+      },
+      "/regions": {
+        "status": "success",
+        "method": "GET",
+        "statusCode": 200
+      },
+      "/public/centres": {
+        "status": "success",
+        "method": "GET",
+        "statusCode": 200
+      }
+    }
+  },
+  "models": {
+    "status": "success",
+    "tables": {
+      "utilisateurs": {
+        "exists": true,
+        "count": 23
+      },
+      "patients": {
+        "exists": true,
+        "count": 26
+      },
+      "medecins": {
+        "exists": true,
+        "count": 7
+      },
+      "centres_sante": {
+        "exists": true,
+        "count": 20
+      },
+      "rendez_vous": {
+        "exists": true,
+        "count": 4
+      },
+      "fiches_medicales": {
+        "exists": true,
+        "count": 7
+      },
+      "prescriptions": {
+        "exists": true,
+        "count": 5
+      },
+      "vaccinations": {
+        "exists": true,
+        "count": 3
+      },
+      "medicaments": {
+        "exists": true,
+        "count": 22
+      },
+      "notifications": {
+        "exists": true,
+        "count": 14
+      },
+      "regions": {
+        "exists": true,
+        "count": 25
+      },
+      "documents_medicaux": {
+        "exists": true,
+        "count": 0
+      }
+    }
+  },
+  "routes": {
+    "status": "unknown",
+    "routes": {}
+  },
+  "frontend": {
+    "status": "success",
+    "pages": {
+      "AdminDashboard.tsx": {
+        "exists": true
+      },
+      "App.tsx": {
+        "exists": true
+      },
+      "BookAppointment.tsx": {
+        "exists": true
+      },
+      "BookAppointmentNew.tsx": {
+        "exists": true
+      },
+      "CentreDetail.tsx": {
+        "exists": true
+      },
+      "CentreForm.tsx": {
+        "exists": true
+      },
+      "Centres.tsx": {
+        "exists": true
+      },
+      "CompletePatientProfile.tsx": {
+        "exists": true
+      },
+      "Configuration.tsx": {
+        "exists": true
+      },
+      "Dashboard.tsx": {
+        "exists": true
+      },
+      "FicheMedicaleForm.tsx": {
+        "exists": true
+      },
+      "FichesMedicales.tsx": {
+        "exists": true
+      },
+      "Login.tsx": {
+        "exists": true
+      },
+      "LoginSimple.tsx": {
+        "exists": true
+      },
+      "MedecinDashboard.tsx": {
+        "exists": true
+      },
+      "MedecinDetail.tsx": {
+        "exists": true
+      },
+      "MedecinForm.tsx": {
+        "exists": true
+      },
+      "Medecins.tsx": {
+        "exists": true
+      },
+      "MedicalRecordForm.tsx": {
+        "exists": true
+      },
+      "MedicamentForm.tsx": {
+        "exists": true
+      },
+      "Medicaments.tsx": {
+        "exists": true
+      },
+      "MinistereDashboard.tsx": {
+        "exists": true
+      },
+      "Notifications.tsx": {
+        "exists": true
+      },
+      "PatientDashboard.tsx": {
+        "exists": true
+      },
+      "PatientDetail.tsx": {
+        "exists": true
+      },
+      "PatientForm.tsx": {
+        "exists": true
+      },
+      "PatientFormNew.tsx": {
+        "exists": true
+      },
+      "Patients.tsx": {
+        "exists": true
+      },
+      "PersonnelDashboard.tsx": {
+        "exists": true
+      },
+      "PersonnelDashboardSimple.tsx": {
+        "exists": true
+      },
+      "PrescriptionDetail.tsx": {
+        "exists": true
+      },
+      "PrescriptionForm.tsx": {
+        "exists": true
+      },
+      "Prescriptions.tsx": {
+        "exists": true
+      },
+      "Register.tsx": {
+        "exists": true
+      },
+      "RendezVous.tsx": {
+        "exists": true
+      },
+      "RendezVousDetail.tsx": {
+        "exists": true
+      },
+      "RendezVousForm.tsx": {
+        "exists": true
+      },
+      "Statistiques.tsx": {
+        "exists": true
+      },
+      "Stats.tsx": {
+        "exists": true
+      },
+      "Users.tsx": {
+        "exists": true
+      },
+      "VaccinationForm.tsx": {
+        "exists": true
+      },
+      "Vaccinations.tsx": {
+        "exists": true
+      }
+    }
+  },
+  "fonctionnalites": {
+    "gestion_patients": {
+      "status": "auth_required",
+      "details": []
+    },
+    "gestion_rdv": {
+      "status": "auth_required",
+      "details": []
+    },
+    "gestion_personnel": {
+      "status": "unknown",
+      "details": []
+    },
+    "administration": {
+      "status": "unknown",
+      "details": []
+    },
+    "statistiques": {
+      "status": "auth_required",
+      "details": []
+    },
+    "notifications": {
+      "status": "unknown",
+      "details": []
+    }
+  }
+}

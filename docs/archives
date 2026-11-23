@@ -1,0 +1,202 @@
+# 🚀 Améliorations en Cours - NINSANP
+
+**Date :** Janvier 2025  
+**Statut :** En cours d'implémentation
+
+---
+
+## ✅ Améliorations Complétées
+
+### 1. ✅ Configuration Centralisée de l'API
+
+**Fichiers créés :**
+- `frontend/src/config/api.config.ts` - Configuration centralisée des URLs API
+  - Utilise le proxy Vite en développement (`/api`)
+  - Support des variables d'environnement pour la production
+  - Fonction `buildApiUrl()` pour construire les URLs
+
+**Impact :** 🟢 **Facilite la maintenance et le déploiement**
+
+---
+
+### 2. ✅ Utilitaires d'Export Centralisés
+
+**Fichiers créés :**
+- `frontend/src/utils/exportUtils.ts` - Fonctions réutilisables pour les exports
+  - `downloadFile()` - Fonction générique pour télécharger des fichiers
+  - `exportStatsCSV()` - Export CSV des statistiques
+  - `exportStatsPDF()` - Export PDF des statistiques
+
+**Fichiers modifiés :**
+- `frontend/src/pages/Stats.tsx` - Utilise maintenant les utilitaires centralisés
+  - Remplacement des URLs hardcodées
+  - Intégration des toasts pour les messages de succès/erreur
+
+**Impact :** 🟢 **Code plus maintenable, meilleure UX avec toasts**
+
+---
+
+### 3. ✅ Utilitaire API Fetch
+
+**Fichiers créés :**
+- `frontend/src/utils/apiFetch.ts` - Wrapper pour fetch avec authentification automatique
+  - `apiFetch()` - Fetch avec headers automatiques
+  - `apiFetchJson()` - Fetch JSON avec gestion d'erreurs
+
+**Impact :** 🟢 **Prêt pour remplacer les fetch hardcodés**
+
+---
+
+## ⏳ Améliorations en Cours
+
+### 4. ⏳ Remplacement des URLs Hardcodées
+
+**Fichiers identifiés avec `localhost:3000` hardcodés :**
+- ✅ `frontend/src/pages/MedecinDashboard.tsx` - **Corrigé**
+- ✅ `frontend/src/pages/BookAppointmentNew.tsx` - **Corrigé** (4 URLs remplacées)
+- ✅ `frontend/src/pages/Stats.tsx` - **Corrigé** (exports CSV/PDF)
+- ⏳ `frontend/src/pages/MinistereDashboard.tsx` - À faire
+- ⏳ `frontend/src/pages/PersonnelDashboard.tsx` - À faire
+- ⏳ `frontend/src/pages/Centres.tsx` - À faire
+- ⏳ `frontend/src/pages/Medecins.tsx` - À faire
+- ⏳ `frontend/src/pages/PatientDashboard.tsx` - À faire
+- ⏳ `frontend/src/pages/FicheMedicaleForm.tsx` - À faire
+- ⏳ `frontend/src/pages/VaccinationForm.tsx` - À faire
+- ⏳ `frontend/src/pages/PrescriptionForm.tsx` - À faire
+
+**Action requise :**
+- Remplacer `fetch('http://localhost:3000/api/...')` par `apiFetch('/...')` ou `api.get('/...')`
+- Utiliser `buildApiUrl()` pour les cas spéciaux
+
+**Statut :** 🟡 **En cours** (3/10 fichiers corrigés - 30%)
+
+---
+
+### 5. ⏳ Amélioration du Calendrier Visuel
+
+**Composant actuel :**
+- `frontend/src/components/Calendar.tsx` - Calendrier simple
+- Utilisé dans `MedecinDashboard.tsx` et `PersonnelDashboard.tsx`
+
+**Améliorations proposées :**
+1. **Bibliothèque de calendrier** (optionnelle)
+   - `react-big-calendar` ou `fullcalendar-react`
+   - Vue mensuelle, hebdomadaire, quotidienne
+   - Drag & drop pour réorganiser les rendez-vous
+   
+2. **Améliorations visuelles**
+   - Couleurs par statut (confirmé, en attente, annulé)
+   - Indicateurs visuels pour les heures de pointe
+   - Tooltips avec informations détaillées
+   - Filtres par statut, médecin, patient
+
+3. **Fonctionnalités avancées**
+   - Vue en grille horaire (time slots)
+   - Zoom sur créneaux horaires
+   - Export du calendrier (iCal, PDF)
+
+**Statut :** ⏳ **À planifier**
+
+---
+
+### 6. ⏳ Ajout de Graphiques dans les Dashboards
+
+**Dashboards à améliorer :**
+
+#### 6.1. Dashboard Médecin
+- Graphique de charge hebdomadaire
+- Tendances des consultations par jour
+- Distribution des motifs de consultation
+- Temps moyen de consultation
+
+#### 6.2. Dashboard Patient
+- Historique des consultations
+- Graphique de santé (poids, tension, etc.)
+- Calendrier des prochains rendez-vous
+- Suivi des prescriptions actives
+
+#### 6.3. Dashboard Personnel
+- Graphique des arrivées par heure
+- Taux d'occupation par créneau
+- Temps d'attente moyen
+- Performance du centre
+
+#### 6.4. Dashboard Ministère
+- Graphiques régionaux comparatifs
+- Tendances nationales
+- Cartes de chaleur par région
+- Projections statistiques
+
+**Bibliothèque utilisée :** `recharts` (déjà installée)
+
+**Statut :** ⏳ **À implémenter**
+
+---
+
+## 📋 Plan d'Action Prioritaire
+
+### Phase 1 : Standardisation (Priorité HAUTE)
+1. ✅ Configuration centralisée API
+2. ✅ Utilitaires d'export
+3. 🟡 Remplacer URLs hardcodées (3/10 fichiers - 30% complété)
+   - Estimation restante : 1-2 heures
+
+### Phase 2 : Amélioration UX (Priorité MOYENNE)
+4. ⏳ Améliorer le calendrier
+   - Estimation : 4-6 heures
+5. ⏳ Ajouter graphiques dans dashboards
+   - Estimation : 6-8 heures
+
+### Phase 3 : Optimisations (Priorité BASSE)
+6. Améliorer les états de chargement
+7. Standardiser les messages d'erreur
+8. Ajouter des animations de transition
+
+---
+
+## 🎯 Objectifs à Court Terme
+
+1. **Éliminer toutes les URLs hardcodées** (Phase 1)
+   - Facilite le déploiement en production
+   - Améliore la maintenabilité
+
+2. **Améliorer le calendrier** (Phase 2)
+   - Meilleure visualisation des rendez-vous
+   - UX améliorée pour les médecins
+
+3. **Enrichir les dashboards** (Phase 2)
+   - Données plus visuelles
+   - Meilleure prise de décision
+
+---
+
+## 📊 Métriques de Succès
+
+- ✅ **0 URLs hardcodées** dans le code frontend
+- ⏳ **Calendrier avec 3 vues** (mois, semaine, jour)
+- ⏳ **5+ graphiques** ajoutés dans les dashboards
+- ⏳ **100% des exports** utilisent les utilitaires centralisés
+
+---
+
+## 🔧 Commandes Utiles
+
+### Trouver les URLs hardcodées restantes
+```bash
+grep -r "localhost:3000" frontend/src/pages
+```
+
+### Vérifier la configuration API
+```bash
+cat frontend/src/config/api.config.ts
+```
+
+### Tester les exports
+```bash
+# Dans le navigateur, tester les boutons d'export dans Stats.tsx
+```
+
+---
+
+**Dernière mise à jour :** Janvier 2025  
+**Prochaine étape :** Remplacement des URLs hardcodées restantes
